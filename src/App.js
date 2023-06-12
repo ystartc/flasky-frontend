@@ -7,9 +7,6 @@ function App() {
     <section className='App'>
       <header>The Sapphire Animal Adoption Agency</header>
       <AnimalList />
-      <Animal />
-      <Animal />
-      <Animal />
     </section>
   );
 }
