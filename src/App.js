@@ -46,19 +46,27 @@ const animalsData = [
 function App() {
   const [animals, setAnimals] = useState(animalsData);
 
-  const updateBookmark = (animalToBookmark /*, bookmarkBoolean*/) => {
+  const updateBookmark = animalToBookmark => {
     const updateAnimals = animals.map(animal => {
       if (animal.id === animalToBookmark.id) return animalToBookmark;
-      // return { ...animal, bookmark: bookmarkBoolean };
       return animal;
     });
+    setAnimals(updateAnimals);
+  };
+
+  const deleteAnimal = animalId => {
+    const updateAnimals = animals.filter(animal => animal.id !== animalId);
     setAnimals(updateAnimals);
   };
 
   return (
     <section className='App'>
       <header>The Sapphire Animal Adoption Agency</header>
-      <AnimalList animals={animals} updateBookmark={updateBookmark} />
+      <AnimalList
+        animals={animals}
+        updateBookmark={updateBookmark}
+        deleteAnimal={deleteAnimal}
+      />
     </section>
   );
 }

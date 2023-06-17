@@ -16,6 +16,7 @@ const AnimalList = props => {
             age={creature.age}
             bookmark={creature.bookmark}
             updateBookmark={props.updateBookmark}
+            deleteAnimal={props.deleteAnimal}
           />
         </li>
       ))}
@@ -32,9 +33,10 @@ AnimalList.propTypes = {
       adopted: PropTypes.bool,
       age: PropTypes.number,
       photo: PropTypes.string.isRequired,
-      updateBookmark: PropTypes.func,
     })
   ),
+  updateBookmark: PropTypes.func,
+  deleteAnimal: PropTypes.func,
 };
 
 export default AnimalList;

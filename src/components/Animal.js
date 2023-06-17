@@ -13,10 +13,16 @@ const Animal = props => {
     props.updateBookmark({ ...props, bookmark: !props.bookmark });
   };
 
+  const toggleDelete = () => {
+    props.deleteAnimal(props.id);
+  };
+
   const altText = `Photo of ${props.name}`;
+
   return (
-    <section className='animal'>
-      <h2>Animal Name: {props.name}</h2>
+    <section className={props.bookmark ? 'animal bookmarked' : 'animal'}>
+      <div className='ribbon'></div>
+      <h2 className='name'>Animal Name: {props.name}</h2>
       <p>Species: {props.species}</p>
       <p>Age: {props.age}</p>
       {props.photo ? (
@@ -24,9 +30,13 @@ const Animal = props => {
       ) : (
         '[No Photo]'
       )}
-      {/* <img src={props.photo} className='img' alt={altText}></img> */}
-      <button onClick={toggleBookmark}>Bookmark</button>
-      <p>Is bookmarked? {props.bookmark ? 'True' : 'False'}</p>
+      <button onClick={toggleBookmark} className='bookmark-button'>
+        Bookmark
+      </button>
+      {/* <p>Is bookmarked? {props.bookmark ? 'True' : 'False'}</p> */}
+      <button onClick={toggleDelete} className='delete-button'>
+        Delete
+      </button>
     </section>
   );
 };
@@ -40,6 +50,7 @@ Animal.propTypes = {
   photo: PropTypes.string.isRequired,
   bookmark: PropTypes.bool,
   updateBookmark: PropTypes.func,
+  deleteAnimal: PropTypes.func,
 };
 
 export default Animal;
