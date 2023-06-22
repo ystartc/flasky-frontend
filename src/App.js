@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Animal from './components/Animal';
 import AnimalList from './components/AnimalList';
+import NewAnimalForm from './components/NewAnimalForm';
 // import './animalsData.json' as animalsData;
 
 const animalsData = [
@@ -62,6 +63,7 @@ function App() {
   return (
     <section className='App'>
       <header>The Sapphire Animal Adoption Agency</header>
+      <NewAnimalForm />
       <AnimalList
         animals={animals}
         updateBookmark={updateBookmark}

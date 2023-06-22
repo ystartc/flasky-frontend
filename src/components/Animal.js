@@ -49,8 +49,8 @@ Animal.propTypes = {
   age: PropTypes.number,
   photo: PropTypes.string.isRequired,
   bookmark: PropTypes.bool,
-  updateBookmark: PropTypes.func,
-  deleteAnimal: PropTypes.func,
+  updateBookmark: PropTypes.func.isRequired,
+  deleteAnimal: PropTypes.func.isRequired,
 };
 
 export default Animal;

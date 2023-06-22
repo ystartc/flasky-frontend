@@ -34,9 +34,9 @@ AnimalList.propTypes = {
       age: PropTypes.number,
       photo: PropTypes.string.isRequired,
     })
-  ),
-  updateBookmark: PropTypes.func,
-  deleteAnimal: PropTypes.func,
+  ).isRequired,
+  updateBookmark: PropTypes.func.isRequired,
+  deleteAnimal: PropTypes.func.isRequired,
 };
 
 export default AnimalList;
